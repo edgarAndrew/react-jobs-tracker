@@ -1,5 +1,8 @@
 import axios from 'axios';
-axios.defaults.baseURL = 'https://jobs-api-edgar.herokuapp.com/api/v1';
+const productionURL = "http://localhost:5000/api/v1"
+const developmentURL = "https://jobs-tracker-7o5a.onrender.com/api/v1"
+
+axios.defaults.baseURL = developmentURL;
 
 axios.interceptors.request.use(function (req) {
   const user = localStorage.getItem('user');
